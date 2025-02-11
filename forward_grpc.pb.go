@@ -4,7 +4,7 @@
 // - protoc             v5.28.2
 // source: forward.proto
 
-package v1
+package __
 
 import (
 	context "context"
