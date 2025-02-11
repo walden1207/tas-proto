@@ -1,9 +1,9 @@
 syntax = "proto3";
-package third_forward_dtu.v1;
-option go_package = "./third_forward_dtu;v1";
+package forward_server.v1;
+option go_package = "./forward_server;v1";
 import "google/protobuf/empty.proto";
 
-service ThirdPartyForwardDTU {
+service ForwardService {
   rpc Forward(ForwardRequest) returns (google.protobuf.Empty);
   rpc Answer(AnswerRequest) returns (AnswerResponse);
 }
