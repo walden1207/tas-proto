@@ -1,0 +1,26 @@
+syntax = "proto3";
+package third_forward_dtu.v1;
+option go_package = "./third_forward_dtu;v1";
+import "google/protobuf/empty.proto";
+
+service ThirdPartyForwardDTU {
+  rpc Forward(ForwardRequest) returns (google.protobuf.Empty);
+  rpc Answer(AnswerRequest) returns (AnswerResponse);
+}
+
+message AnswerResponse {
+  string sn = 1;
+  string answerType = 2;
+  bool success = 3;
+  string err = 4;
+  bytes forwardData = 5;
+  int64 deviceLogID = 6;
+  bytes responseData = 7;
+}
+
+message ForwardRequest {
+  string url = 1;
+  int64 deviceLogID = 2;
+  bytes value = 3;
+}
+message AnswerRequest {}
